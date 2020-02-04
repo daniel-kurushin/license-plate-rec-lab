@@ -14,12 +14,11 @@ def compare(img1, img2):
             a = σ(img1.getpixel((x,y)) / 255)
             b = σ(img2.getpixel((x,y)) / 255)
             D += [(a-b)**2]
-#    print(D)
     return sum(D)**1/2
 
-digits = ImageOps.grayscale(Image.open(open('digits.png', 'rb')))
+digits = ImageOps.grayscale(Image.open(open('img/digits.png', 'rb')))
 
-for x in glob('????.png'):
+for x in glob('img/5????.png'):
     print(x)
     img = ImageOps.grayscale(Image.open(open(x, 'rb')))
     for j in range(3):
