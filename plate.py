@@ -18,7 +18,7 @@ def compare(img1, img2):
 
 digits = ImageOps.grayscale(Image.open(open('img/digits.png', 'rb')))
 
-for x in glob('img/5????.png'):
+for x in glob('img/????.png'):
     print(x)
     img = ImageOps.grayscale(Image.open(open(x, 'rb')))
     for j in range(3):
