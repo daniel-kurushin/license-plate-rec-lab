@@ -1,6 +1,6 @@
 from glob import glob
 from PIL import Image, ImageOps
-
+from digits.digits import coordinates
 SIZE = 16
 e = 2.78
 
@@ -16,13 +16,13 @@ def compare(img1, img2):
             D += [(a-b)**2]
     return sum(D)**1/2
 
-digits = ImageOps.grayscale(Image.open(open('img/digits.png', 'rb')))
+digits = ImageOps.grayscale(Image.open(open('digits/digits.png', 'rb')))
 
-for x in glob('img/????.png'):
+for x in glob('img/*.png'):
     print(x)
     img = ImageOps.grayscale(Image.open(open(x, 'rb')))
-    for j in range(3):
-        b_digit = img.crop((180+105 * j, 13, 284+105 * j, 187)).resize(size = (SIZE,SIZE), resample = Image.HAMMING)
+    for x1, y1, x2, y2 in coordinates:
+        b_digit = img.crop((x1, y1, x2, y2)).resize(size = (SIZE,SIZE), resample = Image.HAMMING)
         rez = []
         for i in range(10):
             a_digit = digits.crop((62*i, 0, 62*(i+1), 82)).resize(size = (SIZE,SIZE), resample = Image.HAMMING)

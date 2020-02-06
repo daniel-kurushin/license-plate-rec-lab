@@ -1,4 +1,4 @@
-coordinates = [
+plate_coordinates = [
     ( 50, 53, 159, 191), 
     (176, 16, 281, 191), 
     (285, 16, 390, 191), 
@@ -9,3 +9,8 @@ coordinates = [
     (806, 19, 874, 133), 
     (884, 19, 952, 133),
 ]
+
+digit_coordinates = []
+
+for x in range(0, 735, 36):
+    digit_coordinates += [(x, 0, x + 28, 44)]
