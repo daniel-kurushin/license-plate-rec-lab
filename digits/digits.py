@@ -12,5 +12,8 @@ plate_coordinates = [
 
 digit_coordinates = []
 
-for x in range(0, 735, 36):
-    digit_coordinates += [(x, 0, x + 28, 44)]
+D = 35
+for x in range(0, 736, D):
+    digit_coordinates += [(x, 0, x + D, 44)]
+
+digit_values = "0123456789ABCEHKMOPTXY"
